@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style type="text/css">
+    	.card-headder{
+    		background-color: #7e848f;
+    		font-weight: bold;
+    		color:white;
+    	}
+
+    	input {
+            text-align: center;
+            height: 20px;
+        }
+
+        select {
+            text-align: center;
+            height: 20px;
+            font-size: 12px; 	
+        }
+
+        .MUNCABS {
+		  font-family:"Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+		}
+
+    </style>
+
+
+  </head>
+  <body style="overflow-x: hidden; overflow-y: hidden; font-size: 12px"> 
+
+  	<div class="row" style="background-color: #b0acac;  padding: 0px 10px 0px 10px">
+  		<div class="col-md-3 text-left">
+  			<img style="vertical-align: middle; width: 30%; margin-top: 10px" src="https://www.conservation-careers.com/wp-content/uploads/2019/09/MUN_Logo_RGB_white_text-5.png">
+  			<img style="vertical-align: middle; width: 45%; margin-left: 10px; margin-bottom: -10px; margin-top: 5px" src="https://southdundas.com/wp-content/uploads/2017/11/carleton_wide_colour_1844.png">
+  		</div>
+  		<div class="col-md-6 text-center">
+  			<div class="row" >
+  				<h2 class="MUNCABS" style="font-size: 28px; margin: 0px; color: #b6012e"><b>Canadian Asphalt Binder Selection (CABS) Model</b></h2>
+  			</div>
+  			<div class="row" style=" padding: 15px; background-color: transparent; ">
+  				<div class="col-md-12 text-center">
+			  			<button id="descbtn" onclick="ShowDescription()" class="btn btn-info commonButton" style="background-color: #b6012e; font-size: 12px; padding: 2px 35px 2px 35px; margin: 0px 5px 0px 5px">
+			  				<b>Model Description</b>
+			  			</button>
+			  			<button id="calcbtn" onclick="ShowCalculations()" class="btn btn-info commonButton" style="background-color: white; color: black; font-size: 12px; padding: 2px 32px 2px 32px; margin: 0px 5px 0px 5px">
+			  				<b>Binder Selection</b>
+			  			</button>
+			  			<button id="supportbtn" onclick="ShowSupport()" class="btn btn-info commonButton" style="background-color: #b6012e; font-size: 12px; padding: 2px 45px 2px 45px; margin: 0px 5px 0px 5px">
+	  						<b>Contact Us</b>
+	  					</button>
+  				</div>
+  				
+  			</div>
+  		</div>
+  		<div class="col-md-3 text-right">
+  			<img style="vertical-align: middle; width: 60%; margin-top: 10px" src="https://raw.githubusercontent.com/hyerramsetty/CMSC-Final-Project/master/ARTEL%20Logo_White_PNG.png">
+  		</div>
+  	</div>
+
+  	
+
+  	<div class="CommonPane" id="DescriptionPane" style="overflow-y: hidden; padding: 70px 70px 70000px 70px;  display: none">
+  		<div class="row" style="height: 70vh">
+  			<div class="col-md-12" style="font-size: 16px; border:2px solid #888b8f;">
+  			Welcome to the Memorial University of Newfoundland - Canadian Asphalt Binder Selection (CABS) tool! With this tool, pavement temperatures can be calculated using three different pavement temperature models: LTPP, SHRP, and the newly developed Canadian Pavement Temperature (CPT) Model. <br>
+  			<br>
+  			<b>SHRP -Strategic Highway Research Program <sup>(1)</sup></b> <br>
+  			The SHRP pavement temperature model calculates high pavement temperature using ambient air temperature and latitude. This model equates low ambient air temperature to low pavement temperature for a conservative approach. Many modifications of the SHRP model exist, including one known as C-SHRP. This is an equation developed to predict low pavement temperatures in Canada, as the original method has been found less effective in Canada.<br>
+  			<br>
+
+  			<b>LTPP – Long-Term Pavement Performance <sup>(2)</sup></b> <br>
+  			LTPP pavement temperature model was developed to help State transportation departments select the most suitable performance-grade binder for a particular site based on the American Association of State and Highway Transportation Officials (AASHTO) M320-10 and AASHTO M332-14 standards.The LTPP pavement temperature model is developed based on pavement sites located between latitudes of 27 degrees (Texas) and 52 degrees (Southern Canada). The model relies on latitude and ambient air temperature to predict corresponding pavement temperatures. <br>
+  			<br>
+
+
+  			<b>CPT – Canadian Pavement Temperature <sup>(3)</sup></b><br>
+  			The CPT model is a recently developed pavement temperature model for use specifically in Canada. CPT functions by geographically dividing Canada into clusters of unique climatic zones. Independent temperature prediction equations were developed for each of these zones to accurately encompass the complex and varied Canadian climate. <br>
+
+  			<br>
+  			<b><sup>(1)</sup></b> Solaimanian, M., & Bolzan, P. (1993). Analysis of the Integrated Model of Climatic Effects on Pavements. In SHRP-A-637. <br>
+
+  			<b><sup>(2)</sup></b> Mohseni, A. (1998). LTPP Seasonal Asphalt Concrete (AC) Pavement Temperature Models, FHWA-RD-97-103 (Vol. 7, Issue 2)<b>;</b> Mohseni, A. (2005). LTPPBIND V3.1 A SUPERPAVE Binder Selection Program, Washington Pavement Systems LLC, Maiden, MD. <br>
+
+  			<b><sup>(3)</sup></b> Swarna, S. T., Hossain, K. & Bernier, A. (2022). Pavement Temperature Model for Canadian Climatic Conditions: CPT Model, 101st Annual Meeting of the Transportation Research Board (TRB) of National Academies of Science and Engineering. Washington DC, USA. Under Preparation. 
+
+
+
+
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="CommonPane" id="SupportPane" style="overflow-y: hidden; padding: 70px 70px 70000px 70px;  display: none">
+  		<div class="row" style="height: 70vh">
+  			<div class="col-md-12" style="font-size: 16px; border:2px solid #888b8f;">
+  			<a href="https://artel.engr.mun.ca/" target="_blank" style="color: #b6012e"><h4>Advanced Road & Transportation Engineering Lab (ARTEL)</h4></a> <br>
+
+  			<div class="row" >
+
+  				<div class="col-md-4">
+
+
+	  			<a href="https://artel.engr.mun.ca/lab-director/" target="_blank" style="color: #b6012e"><b>Dr. Kamal Hossain</b></a> <br>
+					Assistant Professor<br>
+					Department of Civil and Environmental Engineering<br>
+					Carleton University, Ottawa<br>
+					Adjunct Professor, Department of Civil Engineering <br>
+					Advanced Road & Transportation Engineering Lab (ARTEL) <br>
+					Memorial University of Newfoundland <br>
+					Ottawa, Ontario, K1S 5B6, Canada <br>
+					Email: <a href="mailto: kamal.hossain@carleton.ca" style="color: #b6012e">kamal.hossain@carleton.ca</a><br>
+					</div>
+
+					<div class="col-md-4">
+					<a href="https://artel.engr.mun.ca/team_member/surya-teja-swarna/" target="_blank" style="color: #b6012e"><b>Surya T. Swarna</b></a> <br>
+					Ph.D. Candidate<br>
+					Department of Civil Engineering <br>
+					Advanced Road & Transportation Engineering Lab (ARTEL) <br>
+					Memorial University of Newfoundland <br>
+					St. John's, Newfoundland and Labrador, Canada <br>
+					Email: <a href="mailto: stswarna@mun.ca" style="color: #b6012e">stswarna@mun.ca</a><br>
+					</div>
+
+					<div class="col-md-4">
+					<a href="https://artel.engr.mun.ca/team_member/alyssa-bernier/" target="_blank" style="color: #b6012e"><b>Alyssa Bernier</b></a> <br>
+					M.A.Sc Student<br>
+					Department of Civil and Environmental Engineering<br>
+					Advanced Road & Transportation Engineering Lab (ARTEL) <br>
+					Carleton University, Ottawa<br>
+					Ontario, K1S 5B6, Canada <br>
+					Email: <a href="mailto: alyssabernier@cmail.carleton.ca" style="color: #b6012e">alyssabernier@cmail.carleton.ca</a><br>
+					</div>
+
+
+				</div>
+
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="CommonPane" id="CalculationsPane">
+
+  		
+
+  		<div class="row">
+  			<div class="col-md-6" style="font-size: 16px; padding: 20px 130px 3px 130px">
+  				<b>Project Name</b>
+  		</div>
+  			<div class="col-md-6" style="font-size: 16px; padding: 20px 130px 3px 130px">
+  				<b>Project Engineer(s)</b>
+  			</div>
+  		</div>
+
+  		<div class="row">
+  			<div class="col-md-6" style="padding: 0px 130px 15px 130px">
+  				<input style="text-align: left; height: 28px" class="form-control" type="" name="">
+  		</div>
+
+  			<div class="col-md-6" style="padding: 0px 130px 15px 130px">
+  				<input style="text-align: left; height: 28px" class="form-control" type="" name="">
+  			</div>
+  			</div>
+  		
+
+
+  		
+
+  		
+
+  		<div class="row" style="margin-bottom: 10px; padding: 5px;">
+
+	  		
+	  		<div class="col-md-4 text-center" style="padding-top: 10px">
+
+	  			<label style="font-size: 16px; margin-right: 20px" ><b>Select Province</b></label>
+
+	  				<select id="province" name="cars" style="font-size: 14px; background-color: #18765b; color: white; font-weight: bold;width:230px" onchange="SelectProvince()">
+			  			<option value="-1">Select</option>
+			  			<option>Province 1</option>
+			  			<option>Province 2</option>
+			  		</select>
+	  		</div>
+	  		<div class="col-md-4 text-center" style="padding-top: 10px">
+	  			<label style="font-size: 16px; margin-right: 20px"><b>Select Location</b></label>
+
+				<select id="City" name="cars" style="font-size: 14px; background-color: #18765b; color: white; font-weight: bold;width:230px" onchange="SelectCity(this.value)">
+			  		<option value="-1">Select</option>
+			  	</select>
+	  		</div>
+
+	  		<div class="col-md-4 text-center" style="padding-top: 10px">
+	  			<label style="font-size: 16px; margin-right: 20px"><b>Select Model</b></label>
+
+				<select onchange="SelectModel(this.value)" style="font-size: 14px; background-color: #18765b; color: white; font-weight: bold;width:230px" >
+			  		<option value="-1">Select</option>
+			  		<option value="3">CPT Model (2021)</option>
+			  		<option value="2">LTPP Model (2005)</option>
+			  		<option value="1">SHRP Model (1993)</option>
+			  	</select>
+	  		</div>
+
+  	</div>
+
+
+
+  	<div class="row" id="options" style="padding-left: 100px; padding-right: 100px; height: 100%; visibility: hidden;">
+  		<div class="col-md-6" style="border: 3px solid #888b8f; " >
+					<div id="SHRPdiv" class="commoninputdiv" style="display:none;">
+						<div class="row">
+							<h4>Climate Input</h4>
+						</div>
+  						<div class="row" style="padding: 0px 15px 0px 15px">
+  							<div class="col-md-12" style="padding-top: 15px; border: 1px solid black; border-radius: 5px">
+  								<div class="row" style="font-size: 14px; margin-bottom: 10px">
+					  				<div class="col-md-6">High Air Temperature,°C</div>
+					  				<div class="col-md-6">
+					  					<input id="hat" type="number" name="">
+					  				</div>
+					  			</div>
+					  			<div class="row" style="font-size: 14px; margin-bottom: 10px">
+					  				<div class="col-md-6">Low Air Temperature,°C</div>
+					  				<div class="col-md-6">
+					  					<input id="lat" type="number" name="">
+					  				</div>
+					  			</div>
+					  			<div class="row" style="font-size: 14px; margin-bottom: 15px">
+					  				<div class="col-md-6">Latitude of the Section, Degrees</div>
+					  				<div class="col-md-6">
+					  					<input id="latitude" type="number" name="">
+					  				</div>
+					  			</div>
+  							</div>
+  							
+  						</div>
+		  				
+			  			<div class="row" style="padding: 20px 15px 10px 15px">
+			  				<button onclick="SHRPCalculation()" class="btn btn-primary" style="background-color: #b6012e; width: :100px">Calculate</button>
+			  			</div>
+		  			</div>
+		  			<div id="LTPPdiv" class="commoninputdiv" style="display:none">
+		  				<div class="row">
+							<h4>Climate Input</h4>
+						</div>
+		  				<div class="row" style=" margin: 0px 0px 20px 0px; border:1px solid black; border-radius:5px">
+		  					<div class="col-md-12" >
+		  						<div class="row" style="font-size: 14px; margin:10px 0px 10px 0px">
+					  				<div class="col-md-8">High 7-Day Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="hdmat_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Standerd Deviation of High 7-Day Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="sdhmat_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+
+								<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Depth to Surface, mm</div>
+					  				<div class="col-md-4">
+					  					<input id="depthH_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+
+		  					</div>
+		  				</div>
+
+			  			<div class="row" style=" margin: 20px 0px 20px 0px; border: 1px solid black; border-radius:5px">
+			  				<div class="col-md-12" >
+			  					<div class="row" style="font-size: 14px; margin:15px 0px 10px 0px">
+					  				<div class="col-md-8">Low Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="lmat_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Standerd Deviation of Low Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="sdlmat_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Depth to Surface, mm</div>
+					  				<div class="col-md-4">
+					  					<input id="depthL_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+			  				</div>
+			  			</div>
+
+			  			<div class="row" style=" margin: 20px 0px 20px 0px; border: 1px solid black; border-radius:5px">
+			  				<div class="col-md-12">
+			  					<div class="row" style="font-size: 14px; margin:15px 0px 10px 0px">
+					  				<div class="col-md-8">Latitude</div>
+					  				<div class="col-md-4">
+					  					<input id="lat_ltpp" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Reliablity</div>
+					  				<div class="col-md-4">
+					  					<select id="reli_ltpp"  name="cars" style="text-align-last:center; width:165px" >
+							  				<option value="-1">Select</option>
+							  				<option>50 %</option>
+							  				<option>75 %</option>
+							  				<option>98 %</option>
+							  			</select>
+					  				</div>
+					  			</div>
+			  				</div>
+			  			</div>
+
+			  			<div class="row" style="padding: 15px">
+			  				<button onclick="LTPPCalculation()" class="btn btn-primary" style="background-color: #b6012e; width: :100px">Calculate</button>
+			  			</div>
+		  			</div>
+		  			<div id="MUNdiv" class="commoninputdiv" style="display:none">
+		  				<div class="row">
+							<h4>Climate Input</h4>
+						</div>
+		  				<div class="row" style=" margin: 0px 0px 20px 0px; border:1px solid black; border-radius:5px">
+		  					<div class="col-md-12" >
+		  						<div class="row" style="font-size: 14px; margin:10px 0px 10px 0px">
+					  				<div class="col-md-8">High 7-Day Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="hdmat_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Standerd Deviation of High 7-Day Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="sdhmat_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+
+								<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Depth to Surface, mm</div>
+					  				<div class="col-md-4">
+					  					<input id="depthH_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+
+		  					</div>
+		  				</div>
+
+			  			<div class="row" style=" margin: 20px 0px 20px 0px; border: 1px solid black; border-radius:5px">
+			  				<div class="col-md-12" >
+			  					<div class="row" style="font-size: 14px; margin:15px 0px 10px 0px">
+					  				<div class="col-md-8">Low Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="lmat_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Standerd Deviation of Low Mean Air Temperature,°C</div>
+					  				<div class="col-md-4">
+					  					<input id="sdlmat_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Depth to Surface, mm</div>
+					  				<div class="col-md-4">
+					  					<input id="depthL_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+			  				</div>
+			  			</div>
+
+			  			<div class="row" style=" margin: 20px 0px 20px 0px; border: 1px solid black; border-radius:5px">
+			  				<div class="col-md-12">
+			  					<div class="row" style="font-size: 14px; margin:15px 0px 10px 0px">
+					  				<div class="col-md-8">Latitude</div>
+					  				<div class="col-md-4">
+					  					<input id="lat_MunCabs" type="number" name="">
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Reliablity</div>
+					  				<div class="col-md-4">
+					  					<select id="reli_MunCabs"  name="cars"  style=" text-align-last: center; width:165px" >
+							  				<option value="-1">Select</option>
+							  				<option>50 %</option>
+							  				<option>75 %</option>
+							  				<option>98 %</option>
+							  			</select>
+					  				</div>
+					  			</div>
+
+					  			<div class="row" style="display: none; margin:0px 0px 10px 0px">
+					  				<div class="col-md-8">Cluster</div>
+					  				<div class="col-md-4">
+					  					<select id="clus_MunCabs"  name="cars" style="width:145px" >
+							  				<option value="-1">Select</option>
+							  				<option value="1">Cluster 1</option>
+							  				<option value="2">Cluster 2</option>
+							  				<option value="3">Cluster 3</option>
+							  			</select>
+					  				</div>
+					  			</div>
+
+			  				</div>
+			  			</div>
+
+			  			<div class="row" style="padding: 15px">
+			  				<button onclick="MunCabsCalculation()" class="btn btn-primary" style="background-color: #b6012e; width: :100px">Calculate</button>
+			  			</div>
+		  			</div>
+  		</div>
+  		<div class="col-md-6" style="border: 3px solid #888b8f; " >
+  					<div class="commoncal " id="SHRPcalc" style="display: none">
+  						<div class="row" style="padding-left: 18px">
+		  					<h4>Asphalt Binder Output</h4>
+		  				</div>
+		  				<div class="row" style="font-size: 14px; margin:10px 0px 10px 0px">
+		  					<div class="col-md-8">
+		  						High Pavement Temperature Model for a Depth of 20 mm
+		  					</div>
+		  					<div class="col-md-4 text-right">
+		  						<input id="hpt_shrp" type="" name="">
+		  					</div>
+		  				</div>
+		  				<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+		  					<div class="col-md-8">
+		  						Low AC pavement temperature at the surface, °C.s
+		  					</div>
+		  					<div class="col-md-4 text-right">
+		  						<input id="lpt_shrp" type="" name="">
+		  					</div>
+		  				</div>
+		  				<hr>
+		  				<div class="row" style="font-size: 14px; padding-left: 18px; margin-top: 20px">
+		  					<h5>Suggested Asphalt Binder Grade:</h5>
+		  				</div>
+		  				<div class="row" style="padding-left: 18px; margin-top: 15px">
+		  					<div class="col-md-12 text-center">
+		  						<h1 id="SHRPPG" style="font-weight: bold"></h1>
+		  					</div>
+		  				</div>
+		  			</div>
+
+		  			<div class="commoncal" id="LTPPcalc" style="display: none">
+		  				<div class="row" style="padding-left: 18px">
+		  					<h4>Asphalt Binder Output</h4>
+		  				</div>
+		  				<div class="row" style="font-size: 14px; margin:10px 0px 10px 0px">
+		  					<div class="col-md-8">
+		  						Average 7-day High AC Pavement Temperature below the Surface, °C
+		  					</div>
+		  					<div class="col-md-4  text-right">
+		  						<input id="hpt_ltpp" type="" name="">
+		  					</div>
+		  				</div>
+		  				<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+		  					<div class="col-md-8">
+		  						Low AC Pavement Temperature below the Surface, °C
+		  					</div>
+		  					<div class="col-md-4  text-right">
+		  						<input id="lpt_ltpp" type="" name="">
+		  					</div>
+		  				</div>
+		  				<hr>
+		  				<div class="row" style="font-size: 14px; padding-left: 18px; margin-top: 20px">
+		  					<h5>Suggested Base Asphalt Binder Grade:</h5>
+		  				</div>
+		  				<div class="row" style="padding-left: 18px; margin-top: 15px">
+		  					<div class="col-md-12 text-center">
+		  						<h1 id="LTPPPG" style="font-weight: bold"></h1>
+		  					</div>
+		  				</div>
+		  			</div>
+
+		  			<div class="commoncal" id="MUNCABScalc" style="display: none">
+		  					<div class="row" style="padding-left: 18px">
+			  					<h4>Asphalt Binder Output</h4>
+			  				</div>
+		  				<div class="row" style="font-size: 14px; margin:10px 0px 10px 0px">
+
+		  					<div class="col-md-8">
+		  						Average 7-day High AC Pavement Temperature below the Surface, °C
+		  					</div>
+		  					<div class="col-md-4 text-right">
+		  						<input id="hpt_muncabs" type="" name="">
+		  					</div>
+		  				</div>
+		  				
+		  				<div class="row" style="font-size: 14px; margin:0px 0px 10px 0px">
+		  					<div class="col-md-8">
+		  						Low AC Pavement Temperature below the Surface, °C
+		  					</div>
+		  					<div class="col-md-4 text-right">
+		  						<input id="lpt_muncabs" type="" name="">
+		  					</div>
+		  				</div>
+		  				<hr>
+		  				<div class="row" style="padding-left: 18px; margin-top: 20px">
+		  					<h5>Suggested Base Asphalt Binder Grade:</h5>
+		  				</div>
+		  				<div class="row" style="padding-left: 18px; margin-top: 15px">
+		  					<div class="col-md-12 text-center">
+		  						<h1 id="MUNCABSPG" style="font-weight: bold"></h1>
+		  					</div>
+		  				</div>
+		  			</div>
+
+  		</div>
+  	</div>
+  	</div>
+
+  	
+
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+
+  	<script type="text/javascript">
+
+
+  		$(document).ready(function(){
+
+
+  			d3.csv("https://raw.githubusercontent.com/hyerramsetty/CMSC-Final-Project/master/Clusters_export_3_Tableau_Software.csv", function(data) {
+
+			    
+			    let Province_names = []
+
+			    data.forEach(obj => {
+			        Province_names.push(obj.Province)
+			    });
+
+			    let uniqueProvinces = Province_names.filter((item, i, ar) => ar.indexOf(item) === i);
+				//alert(uniqueProvinces)
+
+				let privinceOption = '<option>Select</option>'
+
+				uniqueProvinces.forEach(obj => {
+			        privinceOption += '<option>' + obj + '</option>';
+			    });
+
+				$("#province").html(privinceOption);
+
+			});
+
+		});
+
+  		function SelectModel (val){
+
+  			if(val == "1"){
+  				SHRP()
+  				$('#options').css("visibility","visible")
+  			}
+  			else if(val == "2"){
+  				LTPP()
+  				$('#options').css("visibility","visible")
+  			}
+  			else if(val == "3"){
+  				MUN()
+  				$('#options').css("visibility","visible")
+  			}
+  			else{
+  				$('#options').css("visibility","hidden")
+  			}
+  		}
+
+  		function SelectProvince(){
+
+  			if($('#province').val() != "Select"){
+
+  				var selectedProvince = $('#province').val();
+
+  				d3.csv("https://raw.githubusercontent.com/hyerramsetty/CMSC-Final-Project/master/Clusters_export_3_Tableau_Software.csv", function(data) {
+  					var test = data.filter(item=> item['Province'] == selectedProvince );
+
+  					let cityOption = '<option>Select</option>'
+
+  					test.forEach(obj => {
+				        cityOption += '<option>' + obj.City + '</option>';
+				    });
+
+  					$("#City").html(cityOption);
+
+  				});
+
+  				
+  			}
+  			else{
+  				$("#City").html('<option value="-1">Select</option>');
+  			}
+
+  			CheckRequired();
+  		}
+
+  		function SelectCity(val){
+
+  			d3.csv("https://raw.githubusercontent.com/hyerramsetty/CMSC-Final-Project/master/Clusters_export_3_Tableau_Software.csv", function(data) {
+  				let city = data.filter(item=> item['City'] == val );
+  				$('#clus_MunCabs').val(city[0].cluster)
+  			})
+  			CheckRequired();
+  		}
+
+  		function CheckRequired(){
+
+  			
+  			if ($('#province').val() == -1 || $('#City').val() == -1) {
+  				$('#options').css("visibility", "hidden")
+  			}
+
+  		}
+
+  		function SHRP(){
+  			$('.commoninputdiv').css("display", "none");
+  			$('#SHRPdiv').css("display", "block");
+  			$('.commonCard').css("display", "block");
+  			$('.commonBtnClass').css("background-color", "#357efc").css("color", "white");
+  			$('#SHRP').css("background-color", "#ff5e5e").css("color", "white");
+  			$('.commoncal').css("display", "none");
+  			$('#SHRPcalc').css("display", "block");
+  		}
+
+
+  		function LTPP(){
+  			$('.commonCard').css("display", "block");
+  			$('.commoninputdiv').css("display", "none");
+  			$('#LTPPdiv').css("display", "block");
+  			$('.commonBtnClass').css("background-color", "#357efc").css("color", "white");
+  			$('#LTPP').css("background-color", "#ff5e5e").css("color", "white");
+  			$('.commoncal').css("display", "none");
+  			$('#LTPPcalc').css("display", "block");
+  		}
+
+  		function MUN(){
+  			$('.commonCard').css("display", "block");
+  			$('.commoninputdiv').css("display", "none");
+  			$('#MUNdiv').css("display", "block");
+  			$('.commonBtnClass').css("background-color", "#357efc").css("color", "white");
+  			$('#MUN').css("background-color", "#ff5e5e").css("color", "white");
+  			$('.commoncal').css("display", "none");
+  			$('#MUNCABScalc').css("display", "block");
+  		}
+
+  		function SHRPCalculation(){
+  			let hat = $('#hat').val();
+  			let lat = $('#lat').val();
+  			let latitude = $('#latitude').val();
+
+  			let hpt = ((hat - (0.00618 * latitude * latitude) + (0.2289 * latitude) + 42.4) * 0.9545) - 17.78;
+  			let lpt = (0.859 * lat) + ((0.002 - (0.0007 * lat)) * 0) + 0.17;
+
+  			$('#hpt_shrp').val(hpt.toFixed(2));
+  			$('#lpt_shrp').val(lpt.toFixed(2));
+
+
+  			let pg_shrp = 0.0;
+  			let pgl_shrp = 0.0;
+
+  			if(hpt <= 46){
+  				pg_shrp = 46
+  			}
+  			else if (hpt <= 52){
+  				pg_shrp = 52
+  			} 
+  			else if (hpt <= 58){
+  				pg_shrp = 58
+  			}
+  			else if (hpt <= 64){
+  				pg_shrp = 64
+  			} 
+  			else if (hpt <= 70){
+  				pg_shrp = 70
+  			} 
+  			else {
+  				pg_shrp = 76
+  			}
+
+
+  			if (lpt <= -46){
+  				pgl_shrp = -52
+  			} else if (lpt < -40){
+  				pgl_shrp = -46
+  			} else if (lpt < -34){
+  				pgl_shrp = -40
+  			} else if (lpt < -28){
+  				pgl_shrp = -34
+  			} else if (lpt < -22){
+  				pgl_shrp = -28
+  			} else if (lpt < -16){
+  				pgl_shrp = -22
+  			} else if (lpt < -10){
+  				pgl_shrp = -16
+  			} 
+  			else {
+  				pgl_shrp = -10
+  			}
+  			
+
+  			$('#SHRPPG').html("PG " + pg_shrp + pgl_shrp)
+
+
+  		}
+
+
+  		function LTPPCalculation(){
+  			let hdmat_ltpp = $('#hdmat_ltpp').val();
+  			let lmat_ltpp = $('#lmat_ltpp').val();
+  			let lat_ltpp = $('#lat_ltpp').val();
+  			let sdhmat_ltpp = $('#sdhmat_ltpp').val();
+  			let sdlmat_ltpp = $('#sdlmat_ltpp').val();
+  			let reli_ltpp = $('#reli_ltpp').val();
+  			let depthH_ltpp = $('#depthH_ltpp').val();
+  			let depthL_ltpp = $('#depthL_ltpp').val();
+
+  			let Z = 0.0;
+
+  			if (reli_ltpp == "50 %"){
+  				Z = 0;
+  			}
+  			else if (reli_ltpp == "75 %"){
+  				Z = 1.04;
+  			}
+  			else if (reli_ltpp == "98 %"){
+  				Z = 2.055;
+  			}
+
+  			let term1 = 0.78 * hdmat_ltpp;
+  			let term2 = 0.0025 * lat_ltpp * lat_ltpp;
+  			let term3 = parseFloat(parseFloat(depthH_ltpp) + 25);
+  			let term4 = 15.41 * Math.log10(term3);
+  			let term5 = Math.pow(sdhmat_ltpp, 2);
+  			let term6 = 9 + (0.61 * term5);
+  			let term7 = Math.pow(term6, 0.5);
+
+  			let term8 = 0.72 * lmat_ltpp;
+  			let term9 = Math.pow(sdlmat_ltpp, 2);
+  			let term10 = 4.4 + (0.52 * term9);
+  			let term11 = Math.pow(term10, 0.5);
+  			let term12 = 0.004 * lat_ltpp * lat_ltpp;
+  			let term13 = parseFloat(parseFloat(depthL_ltpp) + 25);
+  			let term14 = 6.26 * Math.log10(term13);
+
+  			let hpt_ltpp = 54.325432 + term1 - term2 - term4 + (Z * term7);
+
+  			let lpt_ltpp = term8 - term12 + term14 - (Z * term11) - 1.56 ;
+
+  			$('#hpt_ltpp').val(hpt_ltpp.toFixed(2));
+  			$('#lpt_ltpp').val(lpt_ltpp.toFixed(2));
+
+  			let pg_ltpp = 0.0;
+  			let pgl_ltpp = 0.0;
+
+  			if(hpt_ltpp <= 46){
+  				pg_ltpp = 46
+  			}
+  			else if (hpt_ltpp <= 52){
+  				pg_ltpp = 52
+  			} 
+  			else if (hpt_ltpp <= 58){
+  				pg_ltpp = 58
+  			}
+  			else if (hpt_ltpp <= 64){
+  				pg_ltpp = 64
+  			} 
+  			else if (hpt_ltpp <= 70){
+  				pg_ltpp = 70
+  			} 
+  			else {
+  				pg_ltpp = 76
+  			}
+
+
+  			if (lpt_ltpp <= -46){
+  				pgl_ltpp = -52
+  			} else if (lpt_ltpp < -40){
+  				pgl_ltpp = -46
+  			} else if (lpt_ltpp < -34){
+  				pgl_ltpp = -40
+  			} else if (lpt_ltpp < -28){
+  				pgl_ltpp = -34
+  			} else if (lpt_ltpp < -22){
+  				pgl_ltpp = -28
+  			} else if (lpt_ltpp < -16){
+  				pgl_ltpp = -22
+  			} else if (lpt_ltpp < -10){
+  				pgl_ltpp = -16
+  			} 
+  			else {
+  				pgl_ltpp = -10
+  			}
+  			
+
+  			$('#LTPPPG').html("PG " + pg_ltpp + pgl_ltpp)
+
+  		}
+
+  		function MunCabsCalculation(){
+
+  			let clus_MunCabs = $('#clus_MunCabs').val();
+
+  			let hdmat_MunCabs = $('#hdmat_MunCabs').val();
+  			let sdhmat_MunCabs = $('#sdhmat_MunCabs').val();
+  			let depthH_MunCabs = $('#depthH_MunCabs').val();
+  			let lmat_MunCabs = $('#lmat_MunCabs').val();
+  			let sdlmat_MunCabs = $('#sdlmat_MunCabs').val();
+  			let depthL_MunCabs = $('#depthL_MunCabs').val();
+  			let lat_MunCabs = $('#lat_MunCabs').val();
+  			let reli_MunCabs = $('#reli_MunCabs').val();
+
+  			let Z = 0.0;
+
+  			if (reli_MunCabs == "50 %"){
+  				Z = 0;
+  			}
+  			else if (reli_MunCabs == "75 %"){
+  				Z = 1.04;
+  			}
+  			else if (reli_MunCabs == "98 %"){
+  				Z = 2.055;
+  			}
+
+
+  			if(clus_MunCabs == "1"){
+
+  				let term101 = 0.7334 * hdmat_MunCabs * (1 + (0.0011 * depthH_MunCabs));
+  				let term102 = 0.2156 * lat_MunCabs;
+  				let term103 = parseFloat(parseFloat(depthH_MunCabs) + 25);
+  				let term104 = 22.5812 * Math.log10(term103);
+  				let term105 = sdhmat_MunCabs;
+  				let term106 = 1 + (0.375 * term105);
+  				let term107 = term106 * 1.0969 * Z;
+
+  				let term108 = 0.769 * lmat_MunCabs;
+  				let term109 = sdlmat_MunCabs;
+  				let term110 = term109;
+  				let term111 = 0.8852 * term110;
+  				let term112 = 0.0015 * lat_MunCabs * lat_MunCabs;
+  				let term113 = 2.7853 * Z;
+  				let term114 = 0.0542 * depthL_MunCabs;
+
+  				//alert(term101+" "+term102+" "+term103+" "+term104+" "+term105+" "+term106+" "+term107+" "+term108+" "+term109+" "+term110+" "+term111+" "+term112+" "+term113+" "+term114)
+
+  				let hpt_muncabs_1 = 78.6582 + term101 - term102 - term104 + term107;
+
+  				let lpt_muncabs_1 = term108 - term112 + term114 - term113 - term111 + 2.9185;
+
+  				$('#hpt_muncabs').val(hpt_muncabs_1.toFixed(2));
+  				$('#lpt_muncabs').val(lpt_muncabs_1.toFixed(2));
+
+  				let pg_muncabs_1 = 0.0;
+  				let pgl_muncabs_1 = 0.0;
+
+  				if(hpt_muncabs_1 <= 46){
+  					pg_muncabs_1 = 46
+  				}
+  				else if (hpt_muncabs_1 <= 52){
+	  				pg_muncabs_1 = 52
+	  			} 
+	  			else if (hpt_muncabs_1 <= 58){
+	  				pg_muncabs_1 = 58
+	  			}
+	  			else if (hpt_muncabs_1 <= 64){
+	  				pg_muncabs_1 = 64
+	  			} 
+	  			else if (hpt_muncabs_1 <= 70){
+	  				pg_muncabs_1 = 70
+	  			} 
+	  			else {
+	  				pg_muncabs_1 = 76
+	  			}
+
+
+	  			if (lpt_muncabs_1 <= -46){
+	  				pgl_muncabs_1 = -52
+	  			} else if (lpt_muncabs_1 < -40){
+	  				pgl_muncabs_1 = -46
+	  			} else if (lpt_muncabs_1 < -34){
+	  				pgl_muncabs_1 = -40
+	  			} else if (lpt_muncabs_1 < -28){
+	  				pgl_muncabs_1 = -34
+	  			} else if (lpt_muncabs_1 < -22){
+	  				pgl_muncabs_1 = -28
+	  			} else if (lpt_muncabs_1 < -16){
+	  				pgl_muncabs_1 = -22
+	  			} else if (lpt_muncabs_1 < -10){
+	  				pgl_muncabs_1 = -16
+	  			} 
+	  			else {
+	  				pgl_muncabs_1 = -10
+	  			}
+	  			
+
+	  			$('#MUNCABSPG').html("PG " + pg_muncabs_1 + pgl_muncabs_1)
+
+  				
+
+  			}
+  			else if (clus_MunCabs == "2"){
+
+  				let term201 = 0.7749 * hdmat_MunCabs * (1 + (0.0004*depthH_MunCabs));
+	  			let term202 = 24.4383 * Math.log10(lat_MunCabs);
+	  			let term203 = parseFloat(parseFloat(depthH_MunCabs) + 25);
+	  			let term204 = 18.26 * Math.log10(term203);
+	  			let term205 = sdhmat_MunCabs;
+	  			let term206 = 1 + (0.269 * term205);
+	  			let term207 = term206 * 1.2387 * Z;
+
+	  			let term208 = 0.767 * lmat_MunCabs;
+	  			let term209 = sdlmat_MunCabs;
+	  			let term210 = term209;
+	  			let term211 = 1.2607 *term210;
+	  			let term212 = 0.1923 * lat_MunCabs;
+	  			let term213 = 3.075 * Z;
+	  			let term214 = 0.0592 * depthL_MunCabs;
+
+	  			let hpt_muncabs_2 = 99.1268 + term201 - term202 - term204 + term207;
+
+	  			let lpt_muncabs_2 = term208 - term212 + term214 - term211 - term213 + 10.3279;
+
+	  			$('#hpt_muncabs').val(hpt_muncabs_2.toFixed(2));
+  				$('#lpt_muncabs').val(lpt_muncabs_2.toFixed(2));
+
+  				let pg_muncabs_2 = 0.0;
+  				let pgl_muncabs_2 = 0.0;
+
+  				if(hpt_muncabs_2 <= 46){
+  					pg_muncabs_2 = 46
+  				}
+  				else if (hpt_muncabs_2 <= 52){
+	  				pg_muncabs_2 = 52
+	  			} 
+	  			else if (hpt_muncabs_2 <= 58){
+	  				pg_muncabs_2 = 58
+	  			}
+	  			else if (hpt_muncabs_2 <= 64){
+	  				pg_muncabs_2 = 64
+	  			} 
+	  			else if (hpt_muncabs_2 <= 70){
+	  				pg_muncabs_2 = 70
+	  			} 
+	  			else {
+	  				pg_muncabs_2 = 76
+	  			}
+
+
+	  			if (lpt_muncabs_2 <= -46){
+	  				pgl_muncabs_2 = -52
+	  			} else if (lpt_muncabs_2 < -40){
+	  				pgl_muncabs_2 = -46
+	  			} else if (lpt_muncabs_2 < -34){
+	  				pgl_muncabs_2 = -40
+	  			} else if (lpt_muncabs_2 < -28){
+	  				pgl_muncabs_2 = -34
+	  			} else if (lpt_muncabs_2 < -22){
+	  				pgl_muncabs_2 = -28
+	  			} else if (lpt_muncabs_2 < -16){
+	  				pgl_muncabs_2 = -22
+	  			} else if (lpt_muncabs_2 < -10){
+	  				pgl_muncabs_2 = -16
+	  			} 
+	  			else {
+	  				pgl_muncabs_2 = -10
+	  			}
+	  			
+
+	  			$('#MUNCABSPG').html("PG " + pg_muncabs_2 + pgl_muncabs_2)
+
+  			}
+  			else if(clus_MunCabs == "3"){
+
+  				let term301 = 0.7052 * hdmat_MunCabs;
+	  			let term302 = 0.002 * lat_MunCabs * lat_MunCabs;
+	  			let term303 = depthH_MunCabs;
+	  			let term304 = 0.1133 * term303;
+	  			let term305 = sdhmat_MunCabs;
+	  			let term306 = 1 - (2.4487 * Z);
+	  			let term307 = term306 * 0.4096 * term305;
+
+	  			let term308 = 0.8467 * lmat_MunCabs;
+	  			let term309 = term308;
+	  			let term310 = sdlmat_MunCabs;
+	  			let term311 = 0.0902 *term310;
+	  			let term312 = 0.0007 * lat_MunCabs * lat_MunCabs;
+	  			let term313 = 3.1769 * Z;
+	  			let term314 = 0.0589 * depthL_MunCabs;
+
+	  			//alert(term301+" "+term302+" "+term303+" "+term304+" "+term305+" "+term306+" "+term307+" "+term308+" "+term309+" "+term310+" "+term311+" "+term312+" "+term313+" "+term314)
+
+	  			let hpt_muncabs_3 = 36.9982 + term301 - term302 - term304 - term307;
+
+	  			let lpt_muncabs_3 = term309 + term312 + term314 + term311 - term313 - 3.3067;
+
+	  			$('#hpt_muncabs').val(hpt_muncabs_3.toFixed(2));
+  				$('#lpt_muncabs').val(lpt_muncabs_3.toFixed(2));
+
+  				let pg_muncabs_3 = 0.0;
+  				let pgl_muncabs_3 = 0.0;
+
+  				if(hpt_muncabs_3 <= 46){
+  					pg_muncabs_3 = 46
+  				}
+  				else if (hpt_muncabs_3 <= 52){
+	  				pg_muncabs_3 = 52
+	  			} 
+	  			else if (hpt_muncabs_3 <= 58){
+	  				pg_muncabs_3 = 58
+	  			}
+	  			else if (hpt_muncabs_3 <= 64){
+	  				pg_muncabs_3 = 64
+	  			} 
+	  			else if (hpt_muncabs_3 <= 70){
+	  				pg_muncabs_3 = 70
+	  			} 
+	  			else {
+	  				pg_muncabs_3 = 76
+	  			}
+
+
+	  			if (lpt_muncabs_3 <= -46){
+	  				pgl_muncabs_3 = -52
+	  			} else if (lpt_muncabs_3 < -40){
+	  				pgl_muncabs_3 = -46
+	  			} else if (lpt_muncabs_3 < -34){
+	  				pgl_muncabs_3 = -40
+	  			} else if (lpt_muncabs_3 < -28){
+	  				pgl_muncabs_3 = -34
+	  			} else if (lpt_muncabs_3 < -22){
+	  				pgl_muncabs_3 = -28
+	  			} else if (lpt_muncabs_3 < -16){
+	  				pgl_muncabs_3 = -22
+	  			} else if (lpt_muncabs_3 < -10){
+	  				pgl_muncabs_3 = -16
+	  			} 
+	  			else {
+	  				pgl_muncabs_3 = -10
+	  			}
+	  			
+
+	  			$('#MUNCABSPG').html("PG " + pg_muncabs_3 + pgl_muncabs_3)
+
+  			}
+
+  		}
+
+  	</script>
+
+  	<script type="text/javascript">
+  		function ShowDescription(){
+  			$('.CommonPane').css("display", "none");
+  			$('#DescriptionPane').css("display", "block")
+  			$('.commonButton').css("background-color", "#b6012e").css("color", "white")
+  			$('#descbtn').css("background-color", "white").css("color", "black")
+
+  		}
+  		function ShowCalculations(){
+  			$('.CommonPane').css("display", "none");
+  			$('#CalculationsPane').css("display", "block")
+  			$('.commonButton').css("background-color", "#b6012e").css("color", "white")
+  			$('#calcbtn').css("background-color", "white").css("color", "black")
+
+  		}
+  		function ShowSupport(){
+  			$('.CommonPane').css("display", "none");
+  			$('#SupportPane').css("display", "block")
+  			$('.commonButton').css("background-color", "#b6012e").css("color", "white")
+  			$('#supportbtn').css("background-color", "white").css("color", "black")
+
+  		}
+  	</script>
+
+  </body>
+</html>
